@@ -24,7 +24,7 @@ steps:
   
 substitutions:
     #GCP Specific configuration. Please DON'T change anything
-    _PROJECT: learn-gcp-with-mahesh
+    _PROJECT: cloud-com
     _ZONE: us-central1-a
     _GKE_CLUSTER: test-cluster
     
