@@ -1,18 +1,18 @@
 steps:
 #First Clone from Google Cloud Source Repository  
-- name: 'gcr.io/cloud-com/git'
+- name: 'gcr.io/cloud-com-294113/git'
   args: ['clone','https://github.com/mahmad-LU/new-cidc.git']
 
-#Build the image 
-- name: 'gcr.io/cloud-com/docker'
+#Build the image gcr.io/cloud-com-294113/cloud-g8
+- name: 'gcr.io/cloud-com-294113/docker'
   args: ['build','-t','gcr.io/${_PROJECT}/${_CONTAINERNAME}:${_VERSION}','.']
 
 #Push the image  
-- name: 'gcr.io/cloud-com/docker'
+- name: 'gcr.io/cloud-com-294113/docker'
   args: ['push','gcr.io/${_PROJECT}/${_CONTAINERNAME}:${_VERSION}']
   
 #Update the container image using kubectl set
-- name: 'gcr.io/cloud-com/kubectl'
+- name: 'gcr.io/cloud-com-294113/kubectl'
   args:
   - 'set'
   - 'image'
@@ -24,7 +24,7 @@ steps:
   
 substitutions:
     #GCP Specific configuration. Please DON'T change anything
-    _PROJECT: cloud-com
+    _PROJECT: cloud-com-294113
     _ZONE: us-central1-a
     _GKE_CLUSTER: test-cluster
     
